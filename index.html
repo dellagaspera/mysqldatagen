@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datagen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">mysql datagen</h1>
+        
+        <form id="database-generator">
+            <!-- Database Name -->
+            <div class="inline-row">
+                <span>create database if not exists</span>
+                <input type="text" name="database-name" required>
+            </div>
+            <button type="button" class="new-table">add table</button>
+            <button type="button" id="download-sql">download .sql</button>
+        </form>
+    </div>
+        
+    <script src="script.js"></script>
+</body>
+</html>

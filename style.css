@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --accent-color: #00ffe5;
+
+  --bg-color: #121212;
+  --text-color: var(--accent-color);
+  --font-main: 'Ubuntu Mono';
+
+  --container-bg: #1e1e1e;
+  --container-border: var(--accent-color);
+  --container-shadow: #00ffe540;
+
+  --input-bg: #1e1e1e;
+  --input-hover-border: var(--accent-color);
+  --input-border: #fff2;
+  --input-text: var(--accent-color);
+
+  --label-color: var(--accent-color);
+
+  --button-bg: #1e1e1e;
+  --button-hover-bg: #212121;
+  --button-border: #fff2;
+  --button-hover-border: var(--accent-color);
+
+  --delete-bg: #7c1c1c;
+  --delete-hover: #a52424;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background-color: var(--container-bg);
+  border: 1px solid var(--container-border);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 0 8px var(--container-shadow);
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.database-table {
+  background-color: var(--container-bg);
+  border: 1px solid var(--container-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 0 8px var(--container-shadow);
+}
+
+.database-table-column {
+  background-color: var(--container-bg);
+  border: 1px solid var(--container-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 0 8px var(--container-shadow);
+}
+
+/* Flex container para inputs e botões */
+.inline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* evita overflow em telas menores */
+}
+
+.inline-row > span {
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: var(--label-color);
+  font-size: 0.95rem;
+}
+
+.inline-row input[type="text"] {
+  flex: 1;
+}
+
+/* Inputs visuais */
+input[type="text"],
+select {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* Botões */
+button {
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  border: 1px solid var(--button-hover-border);
+}
+
+button.delete {
+  background-color: var(--delete-bg);
+}
+
+button.delete:hover {
+  background-color: var(--delete-hover);
+}
+
+/* Ajuste para botão de deletar coluna */
+.database-table-column > button {
+  align-self: flex-end;
+}
+
+input, select, button {
+  font-family: 'Ubuntu Mono', monospace;
+}
