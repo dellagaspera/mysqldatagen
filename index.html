@@ -18,8 +18,33 @@
             <button type="button" class="new-table">add table</button>
             <button type="button" id="download-sql">download .sql</button>
         </form>
-    </div>
+    </div>      
+    <button id="accent-config-button">🎨</button>
+    <label class="color-picker-wrapper" title="accent color">
+        <input type="color" id="accent-color-picker">
+    </label>
+      
         
     <script src="script.js"></script>
+    <script>
+        const colorInput = document.getElementById("accent-color-picker");
+
+        // Aplicar cor salva (se houver)
+        const savedAccent = localStorage.getItem("accentColor");
+        if (savedAccent) {
+            document.documentElement.style.setProperty("--accent-color", savedAccent);
+            // swatch.style.backgroundColor = savedAccent;
+            colorInput.value = savedAccent;
+        }
+
+        // Atualizar quando escolher nova cor
+        colorInput.addEventListener("input", (e) => {
+        const color = e.target.value;
+        document.documentElement.style.setProperty("--accent-color", color);
+        // swatch.style.backgroundColor = color;
+        localStorage.setItem("accentColor", color);
+        });
+
+    </script>
 </body>
 </html>

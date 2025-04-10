@@ -139,3 +139,93 @@ button.delete:hover {
 input, select, button {
   font-family: 'Ubuntu Mono', monospace;
 }
+
+select {
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background-color: var(--container-bg);
+  color: var(--accent-color);
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Borda ao focar */
+select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: var(--container-bg); 
+}
+
+/* Cor da opção selecionada */
+/* select option:checked {
+  background-color: var(--accent-color);
+  color: white;
+} */
+
+.popup-container {
+  position: relative;
+}
+
+.config-btn {
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
+.popup-menu {
+  position: absolute;
+  bottom: 20px;
+  left: 85px;
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+  min-width: 200px;
+}
+
+.popup-menu.hidden {
+  display: none;
+}
+
+#accent-config-button {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  bottom: 20px;
+  text-align: center;
+  vertical-align: middle;
+  left: 20px;
+  z-index: 999;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.color-picker-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.color-picker-wrapper input[type="color"] {
+  opacity: 0;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  padding: 10px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+}
