@@ -9,9 +9,8 @@
 <body>
     <div class="container">
         <h1 style="text-align: center;">mysql datagen</h1>
-        
+
         <form id="database-generator">
-            <!-- Database Name -->
             <div class="inline-row">
                 <span>create database if not exists</span>
                 <input type="text" name="database-name" required>
@@ -19,33 +18,52 @@
             <button type="button" class="new-table">add table</button>
             <button type="button" id="download-sql">download .sql</button>
         </form>
-    </div>      
+    </div>
+
     <button id="accent-config-button">🎨</button>
     <label class="color-picker-wrapper" title="accent color">
         <input type="color" id="accent-color-picker">
     </label>
+    <div class="bottom-div">
+        della gaspera
+    </div>
+
+    <!-- POPUP -->
+    <div id="global-data-popup" class="data-popup hidden">
+        <div class="data-popup-content">
+            <div class="inline-row" style="justify-content: space-between; height: auto;">
+                insert into    
+                <button style="float: right;" type="button" id="popup-cancel" class="delete">x</button>
+            </div>
+            <form id="popup-form" class="data-popup-form inline-row"></form>
+            <button type="button" id="popup-confirm" style="margin-bottom: 12px;">add value</button>
+            <div id="popup-rows-list"></div>
+        </div>
+    </div>
+
+    <dialog id="alert-popup">
+        <form method="dialog">
+          <popupmessage id="alert-popup-text">error</popupmessage>
+            <div style="text-align: right; margin-top: 12px;">
+                <button>close</button>
+            </div>
+        </form>
+    </dialog>
       
-        
+
     <script src="script.js"></script>
     <script>
         const colorInput = document.getElementById("accent-color-picker");
-
-        // Aplicar cor salva (se houver)
         const savedAccent = localStorage.getItem("accentColor");
         if (savedAccent) {
             document.documentElement.style.setProperty("--accent-color", savedAccent);
-            // swatch.style.backgroundColor = savedAccent;
             colorInput.value = savedAccent;
         }
-
-        // Atualizar quando escolher nova cor
         colorInput.addEventListener("input", (e) => {
-        const color = e.target.value;
-        document.documentElement.style.setProperty("--accent-color", color);
-        // swatch.style.backgroundColor = color;
-        localStorage.setItem("accentColor", color);
+            const color = e.target.value;
+            document.documentElement.style.setProperty("--accent-color", color);
+            localStorage.setItem("accentColor", color);
         });
-
     </script>
 </body>
 </html>
